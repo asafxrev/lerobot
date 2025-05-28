@@ -532,6 +532,12 @@ class So100RobotConfig(ManipulatorRobotConfig):
                     "wrist_flex": [4, "sts3215"],
                     "wrist_roll": [5, "sts3215"],
                     "gripper": [6, "sts3215"],
+                    # "motor_1": [1, "sts3215"],  # Motor 1 for Phospho datasets
+                    # "motor_2": [2, "sts3215"],  # Motor 2 for Phospho datasets
+                    # "motor_3": [3, "sts3215"],  # Motor 3 for Phospho datasets
+                    # "motor_4": [4, "sts3215"],  # Motor 4 for Phospho datasets
+                    # "motor_5": [5, "sts3215"],  # Motor 5 for Phospho datasets
+                    # "motor_6": [6, "sts3215"],  # Motor 6 for Phospho datasets
                 },
             ),
         }
@@ -540,11 +546,23 @@ class So100RobotConfig(ManipulatorRobotConfig):
     cameras: dict[str, CameraConfig] = field(
         default_factory=lambda: {
             "follower_cam": OpenCVCameraConfig(
-                camera_index=1,  # Follower camera's index on the macbook (at least when the macbook lid is closed)
+                camera_index=0,
                 fps=30,
                 width=640,
                 height=480,
             ),
+            "side_cam": OpenCVCameraConfig(
+                camera_index=1,
+                fps=30,
+                width=640,
+                height=480,
+            ),
+            # "main": OpenCVCameraConfig(  # "main" is the camera on Phospho datasets
+            #     camera_index=1,  # Follower camera's index on the macbook (at least when the macbook lid is closed)
+            #     fps=30,
+            #     width=640,
+            #     height=480,
+            # ),
             # "phone": OpenCVCameraConfig(
             #     camera_index=1,
             #     fps=30,
