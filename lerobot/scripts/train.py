@@ -78,7 +78,8 @@ def update_policy(
     grad_norm = torch.nn.utils.clip_grad_norm_(
         policy.parameters(),
         grad_clip_norm,
-        error_if_nonfinite=False,
+        error_if_nonfinite=True,
+        # foreach=False,  # AR override.
     )
 
     # Optimizer's gradients are already unscaled, so scaler.step does not unscale them,

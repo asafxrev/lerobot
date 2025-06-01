@@ -137,7 +137,9 @@ def make_policy(
         features = env_to_policy_features(env_cfg)
 
     cfg.output_features = {key: ft for key, ft in features.items() if ft.type is FeatureType.ACTION}
-    cfg.input_features = {key: ft for key, ft in features.items() if key not in cfg.output_features}
+    cfg.input_features = {key: ft for key, ft in features.items() if key not in cfg.output_features 
+                        #   and key not in ("observation.images.side_cam",)
+                          }
     kwargs["config"] = cfg
 
     if cfg.pretrained_path:
