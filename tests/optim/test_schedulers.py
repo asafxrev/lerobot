@@ -13,14 +13,14 @@
 # limitations under the License.
 from torch.optim.lr_scheduler import LambdaLR
 
-from lerobot.common.constants import SCHEDULER_STATE
-from lerobot.common.optim.schedulers import (
+from lerobot.optim.schedulers import (
     CosineDecayWithWarmupSchedulerConfig,
     DiffuserSchedulerConfig,
     VQBeTSchedulerConfig,
     load_scheduler_state,
     save_scheduler_state,
 )
+from lerobot.utils.constants import SCHEDULER_STATE
 
 
 def test_diffuser_scheduler(optimizer):
