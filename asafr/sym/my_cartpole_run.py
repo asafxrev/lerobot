@@ -2,7 +2,7 @@ from lerobot.envs.utils import _load_module_from_path, _call_make_env, _normaliz
 import numpy as np
 
 # Load your module
-module = _load_module_from_path("./sym_env.py")
+module = _load_module_from_path("./my_cartpole.py")
 
 # Test the make_env function
 result = _call_make_env(module, n_envs=1, use_async_envs=False)
