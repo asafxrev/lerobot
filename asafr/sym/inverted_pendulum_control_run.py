@@ -12,17 +12,14 @@ normalized = _normalize_hub_result(result)
 # Verify it works
 suite_name = next(iter(normalized))
 env = normalized[suite_name][0]
-obs, info = env.reset()
 
 # Run a simple episode
 obs, info = env.reset()
-env.render_mode = "human"
 done = np.zeros(env.num_envs, dtype=bool)
 total_reward = np.zeros(env.num_envs)
 
-
 def get_user_actions() -> list[np.ndarray]|None:
-    # TODO: Update. The current code is for cartpole.
+    # TODO: Update to pendulum. The current code is for cartpole.
     action = None
     while action is None:
         inp = input('Choose action and repetition. '
