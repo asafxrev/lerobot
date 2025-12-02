@@ -1,2 +1,4 @@
+# In addition to LeRobot's
 gymnasium[classic-control]
 gymnasium[mujoco]
+seaborn
